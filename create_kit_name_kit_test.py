@@ -10,7 +10,7 @@ def get_kit_body (name_kit):
     # Se devuelve un nuevo diccionario con el valor name requerido
     return current_body
 
-
+# Función para generar el "authToken"
 def get_new_user_token():
     new_user = sender_stand_request.post_new_user(data.user_body.copy())
     auth_token = new_user.json()["authToken"]
@@ -35,12 +35,12 @@ def negative_assert (name):
     assert kit_response.json()["code"] == 400
 
 
-# Prueba 1. Test para comprobar que se permite 1 caracter en el campo name
+# Prueba 1. Test para comprobar que el campo name permite 1 caracter
 def test_create_kit_1_letter_in_name_get_success_response():
     positive_assert("a")
 
 
-# Prueba 2. Test para comprobar que se permitan 511 caracteres en el campo name
+# Prueba 2. Test para comprobar que el campo name  permitaa 511 caracteres
 def test_create_kit_511_letter_in_get_success_response():
     positive_assert("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC")
 
