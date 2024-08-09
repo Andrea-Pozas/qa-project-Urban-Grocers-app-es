@@ -70,9 +70,12 @@ def test_create_kit_number_success_response():
     positive_assert("123")
 
 
-# Prueba 8. Test para comprobar que el campo name no permite quedarse vacio
+# Prueba 8. Test para comprobar que la solicitud marca error si se envia sin el campo name
 def test_create_kit_negative_response():
-    negative_assert()
+    kit_body = data.kit_body.copy()
+    kit_body.pop("name")
+    negative_assert(kit_body)
+    
 
 
 # Prueba 9. Test para comprobar que el campo name no permite un número en lugar de un string
