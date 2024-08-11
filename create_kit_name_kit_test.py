@@ -35,6 +35,12 @@ def negative_assert (name):
     assert kit_response.json()["code"] == 400
 
 
+def negative_assert_no_name(kit_body):
+    kit_response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
+    assert kit_response.status_code == 400
+    assert kit_response.json()["code"] == 400
+
+
 # Prueba 1. Test para comprobar que el campo name permite 1 caracter
 def test_create_kit_1_letter_in_name_get_success_response():
     positive_assert("a")
@@ -74,7 +80,7 @@ def test_create_kit_number_success_response():
 def test_create_kit_negative_response():
     kit_body = data.kit_body.copy()
     kit_body.pop("name")
-    negative_assert(kit_body)
+    negative_assert_no_name(kit_body)
     
 
 
