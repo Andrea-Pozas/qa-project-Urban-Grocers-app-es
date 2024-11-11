@@ -14,7 +14,7 @@ Urban Grocers es una aplicación de entrega de productos por catálogo y kits co
 
 # Lista de comprobación de las pruebas incluidas en la automatización para el campo Name
 
-  | No. de prueba | Decripción | Código de respuesta |
+  | No. de prueba | Decripción | Código de respuesta esperados |
 |--------------|--------------|--------------|
 | 1 | Comprobar que el campo admite un caracter| 201 |
 | 2 | Comprobar que el campo admite 511 caracteres| 201|
